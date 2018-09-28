@@ -1,5 +1,7 @@
 package com.petifee.domain;
 
+import java.util.Date;
+
 public class UserVO {
 	private String uid;
 	private String upw;
@@ -42,5 +44,17 @@ public class UserVO {
 	public void setUpoint(int upoint) {
 		this.upoint = upoint;
 	}
+	
+	private Date regdate;
+	
+	public Date getRegdate() {
+		return regdate;
+	}
+	
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+
+
 
 }

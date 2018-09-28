@@ -9,8 +9,8 @@ import org.junit.Test;
 
 public class MySQLConnTest {
 	private static final String Driver = "com.mysql.cj.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://127.0.0.1:3306/test?useSSL=false&serverTimezone=Asia/Seoul";
-	private static final String User = "root";
+	private static final String URL = "jdbc:mysql://127.0.0.1:3306/PreMom?useSSL=false&serverTimezone=Asia/Seoul";
+	private static final String User = "premom";
 	private static final String Pass = "asdf7070!";
 	
 	@Test
