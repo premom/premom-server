@@ -28,6 +28,6 @@
 	</bean>
 	
 	<!-- bean 검색  장소 지정 -->
-	<context:component-scan base-package="com.petifee.persistence">
-	</context:component-scan>
+	<context:component-scan base-package="com.petifee.persistence"></context:component-scan>
+	<context:component-scan base-package="com.petifee.service"></context:component-scan>
 </beans>
