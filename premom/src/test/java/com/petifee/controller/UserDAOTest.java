@@ -18,7 +18,7 @@ public class UserDAOTest {
 	
 	@Test
 	public void testTime() throws Exception {
-		System.out.println(dao.getTime());
+//		System.out.println(dao.getTime());
 	}
 	
 	@Test
@@ -33,14 +33,14 @@ public class UserDAOTest {
 	
 	@Test
 	public void testReadUser() throws Exception {
-		UserVO temp = dao.readUser("gondr");
-		System.out.println(temp.toString());
+//		UserVO temp = dao.readUser("gondr");
+//		System.out.println(temp.toString());
 	}
 	
 	@Test
 	public void testReadWithPW() throws Exception {
-		UserVO temp = dao.readWithPw("gondr", "1234");
-		System.out.println(temp.toString());
+//		UserVO temp = dao.readWithPw("gondr", "1234");
+//		System.out.println(temp.toString());
 	}
 
 
