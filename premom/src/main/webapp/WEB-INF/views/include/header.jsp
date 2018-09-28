@@ -53,4 +53,11 @@
         </div>
       </div>
     </nav>
+    
+    <c:if test="${!empty result}">
+		<div class="alert alert-${result eq 'success' ? 'success' : 'danger' } alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<strong>${result eq 'success' ? '성공' : '실패' }</strong> ${msg}
+		</div>
+	</c:if>
   
