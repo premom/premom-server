@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.petifee.domain.BoardVO;
+import com.petifee.exception.ArticleNotFound;
 import com.petifee.service.BoardService;
 
 @Controller
@@ -55,15 +56,19 @@ public class BoardController {
 	
 	@RequestMapping(value="/read/{bno}", method=RequestMethod.GET)
 	public String read(@PathVariable("bno") int bno, Model model) throws Exception{
-		BoardVO bo = bs.read(bno);
-		String content = bo.getContent();
-		content = content.replaceAll("\r\n", "<br/>"); //nl2br
-		bo.setContent(content);
-		model.addAttribute(bo);
-		return "/board/read";
+		try {
+			BoardVO bo = bs.read(bno);
+			String content = bo.getContent();
+			content = content.replaceAll("\r\n", "<br/>"); //nl2br
+			bo.setContent(content);
+			model.addAttribute(bo);
+			return "/board/read";
+		} catch(Exception e) {
+			throw new ArticleNotFound();
+		}
 	}
 	
-	
+
 	@RequestMapping(value="/remove/{bno}", method=RequestMethod.GET)
 	public String remove(@PathVariable("bno") int bno, RedirectAttributes rttr) 
 			throws Exception{
