@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.petifee.mapper.SeatMapper">
+	<insert id="create">
+		insert into tbl_seat(is_seat, name) 
+		values (#{is_seat}, #{name})
+	</insert>
+	
+	<select id="read" resultMap="SeatMap">
+		select idx, is_seat, name
+		from tbl_seat
+		where idx = #{idx}
+	</select>
+	
+	<resultMap type="SeatVO" id="SeatMap">
+		<result property="idx" column="idx"/>
+		<result property="is_seat" column="is_seat"/>
+		<result property="name" column="name"/>
+	</resultMap>
+	
+	<update id="update">
+		update tbl_seat set is_seat= #{is_seat}, name = #{name}
+		where idx = #{idx}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_seat where idx = #{idx}
+	</delete>
+	
+	<select id="listAll" resultMap="SeatMap">
+		<![CDATA[
+			select *
+			from tbl_seat
+		]]>
+	</select>
+</mapper>
+	
