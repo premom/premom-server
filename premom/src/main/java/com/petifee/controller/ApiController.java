@@ -20,20 +20,26 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.petifee.domain.SeatVO;
 import com.petifee.exception.ArticleNotFound;
-import com.petifee.service.BoardService;
+import com.petifee.service.SeatService;
 
 @Controller
 @RequestMapping("/api")
 public class ApiController {
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(ApiController.class);
+	
+	@Inject
+	private SeatService ss;
 
 	@RequestMapping(value = "seat", method = RequestMethod.GET)
-	public @ResponseBody Map<String, Object> getSeat(){
+	public @ResponseBody Map<String, Object> getSeat(Model model) throws Exception{
 		
+		model.addAttribute("list", ss.listAll()); 
+		
+		List<SeatVO> list = ss.listAll();
 
-		List<SeatVO> list = new ArrayList<SeatVO>();
-		list.add(new SeatVO(1, 0));
-		list.add(new SeatVO(2, 1));
+//		List<SeatVO> list = new ArrayList<SeatVO>();
+//		list.add(new SeatVO(1, 0));
+//		list.add(new SeatVO(2, 1));
 		
 		Map<String, Object> res = new HashMap<String, Object>();
 		res.put("data", list);

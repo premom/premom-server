@@ -5,6 +5,8 @@ import java.util.Date;
 public class SeatVO {
 	private int idx;
 	private int is_seat;
+	private String name;
+	
 	
 	public SeatVO(){
 	}
@@ -29,6 +31,15 @@ public class SeatVO {
 
 	public void setIdx(int idx) {
 		this.idx = idx;
+	}
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
