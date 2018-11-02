@@ -6,7 +6,7 @@
 <mapper namespace="com.petifee.mapper.SeatMapper">
 	<insert id="create">
 		insert into tbl_seat(is_seat, name, fast_transfer) 
-		values (#{is_seat}, #{name})
+		values (#{is_seat}, #{name}, #{fast_transfer})
 	</insert>
 	
 	<select id="read" resultMap="SeatMap">
@@ -32,10 +32,8 @@
 	</delete>
 	
 	<select id="listAll" resultMap="SeatMap">
-		<![CDATA[
-			select *
-			from tbl_seat
-		]]>
+		select *
+		from tbl_seat
 	</select>
 </mapper>
 	
