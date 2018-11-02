@@ -5,12 +5,12 @@
   
 <mapper namespace="com.petifee.mapper.SeatMapper">
 	<insert id="create">
-		insert into tbl_seat(is_seat, name) 
+		insert into tbl_seat(is_seat, name, fast_transfer) 
 		values (#{is_seat}, #{name})
 	</insert>
 	
 	<select id="read" resultMap="SeatMap">
-		select idx, is_seat, name
+		select idx, is_seat, name, fast_transfer
 		from tbl_seat
 		where idx = #{idx}
 	</select>
@@ -19,10 +19,11 @@
 		<result property="idx" column="idx"/>
 		<result property="is_seat" column="is_seat"/>
 		<result property="name" column="name"/>
+		<result property="fast_transfer" column="fast_transfer"/>
 	</resultMap>
 	
 	<update id="update">
-		update tbl_seat set is_seat= #{is_seat}, name = #{name}
+		update tbl_seat set is_seat= #{is_seat}, name = #{name}, fast_transfer = #{fast_transfer}
 		where idx = #{idx}
 	</update>
 	
