@@ -13,9 +13,10 @@ public class SeatVO {
 	}
 
 	
-	public SeatVO(int idx, int is_seat, int fast_transfer){
+	public SeatVO(int idx, int is_seat, String name, int fast_transfer){
 		this.idx = idx;
 		this.is_seat = is_seat;
+		this.name = name;
 		this.fast_transfer = fast_transfer;
 	}
 
@@ -34,7 +35,7 @@ public class SeatVO {
 	public void setIdx(int idx) {
 		this.idx = idx;
 	}
-	
+
 
 	public String getName() {
 		return name;
@@ -49,7 +50,7 @@ public class SeatVO {
 	}
 
 	public void setFast_transfer(int fast_transfer) {
-		this.idx = fast_transfer;
+		this.fast_transfer = fast_transfer;
 	}
 
 
