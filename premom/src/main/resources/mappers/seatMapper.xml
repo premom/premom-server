@@ -10,7 +10,7 @@
 	</insert>
 	
 	<select id="read" resultMap="SeatMap">
-		select idx, is_seat, name, fast_transfer
+		select idx, is_seat, fast_transfer
 		from tbl_seat
 		where idx = #{idx}
 	</select>
@@ -18,12 +18,13 @@
 	<resultMap type="SeatVO" id="SeatMap">
 		<result property="idx" column="idx"/>
 		<result property="is_seat" column="is_seat"/>
-		<result property="name" column="name"/>
 		<result property="fast_transfer" column="fast_transfer"/>
+		<result property="car" column="car"/>
+		<result property="sub_car" column="sub_car"/>
 	</resultMap>
 	
 	<update id="update">
-		update tbl_seat set is_seat= #{is_seat}, name = #{name}, fast_transfer = #{fast_transfer}
+		update tbl_seat set is_seat= #{is_seat},  fast_transfer = #{fast_transfer}
 		where idx = #{idx}
 	</update>
 	
