@@ -30,8 +30,8 @@ public class ApiController {
 	@Inject
 	private SeatService ss;
 
-	@RequestMapping(value = "seat", method = RequestMethod.GET)
-	public @ResponseBody Map<String, Object> getSeat(Model model) throws Exception{
+	@RequestMapping(value = "seatAll", method = RequestMethod.GET)
+	public @ResponseBody Map<String, Object> getSeatAll(Model model) throws Exception{
 		
 		model.addAttribute("list", ss.listAll()); 
 		
@@ -46,5 +46,22 @@ public class ApiController {
 		
 		return res;
 	}
+	
+	@RequestMapping(value = "seat/{car}", method = RequestMethod.GET)
+	public @ResponseBody Map<String, Object> getSeat(@PathVariable("car") String car, Model model) throws Exception{
+		
+		model.addAttribute("list", ss.getSeat(car)); 
+		
+		List<SeatVO> list = ss.getSeat(car);
+
+		
+		Map<String, Object> res = new HashMap<String, Object>();
+		res.put("data", list);
+		
+		return res;
+	}
+	
+	
+	
 	
 }

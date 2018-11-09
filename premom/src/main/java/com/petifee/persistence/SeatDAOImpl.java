@@ -40,6 +40,11 @@ public class SeatDAOImpl implements SeatDAO {
 	public List<SeatVO> listAll() throws Exception {
 		return session.selectList(namespace + ".listAll");
 	}
+	
+	@Override
+	public List<SeatVO> getSeat(String car) throws Exception {
+		return session.selectList(namespace + ".getSeat", car);
+	}
 }
 
 

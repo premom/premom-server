@@ -15,4 +15,7 @@ public interface SeatService {
 	public void remove(int bno) throws Exception;
 	//리스트 보기
 	public List<SeatVO> listAll() throws Exception;
+
+	//좌석 보기
+	public List<SeatVO> getSeat(String car) throws Exception;
 }
