@@ -36,5 +36,12 @@
 		select *
 		from tbl_seat
 	</select>
+	
+	
+	<select id="getSeat" resultMap="SeatMap">
+		select *
+		from tbl_seat
+		where car = #{car}
+	</select>
 </mapper>
 	

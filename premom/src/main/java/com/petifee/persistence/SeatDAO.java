@@ -15,4 +15,7 @@ public interface SeatDAO {
 		public void delete(int bno) throws Exception;
 		//글 목록 가져오기
 		public List<SeatVO> listAll() throws Exception;
+
+		//좌석 가져오기
+		public List<SeatVO> getSeat(String car) throws Exception;
 }

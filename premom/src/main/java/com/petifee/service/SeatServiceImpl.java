@@ -39,5 +39,10 @@ public class SeatServiceImpl implements SeatService {
 	public List<SeatVO> listAll() throws Exception {
 		return dao.listAll();
 	}
+	
+	@Override
+	public List<SeatVO> getSeat(String car) throws Exception {
+		return dao.getSeat(car);
+	}
 }
 
